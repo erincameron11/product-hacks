@@ -19,7 +19,7 @@ df = df.drop('TikTok Reference Video', axis=1)
 
 # Locate the number of rows to calculate the height of the dataframe needed
 n_rows = df.shape[0]
-df_height = int(35.2 * (n_rows + 1))
+df_height = (n_rows + 1) * 35 + 3
 
 # Display the dataframe
 st.dataframe(df, height=df_height, width=2000)
