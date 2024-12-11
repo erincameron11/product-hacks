@@ -13,7 +13,13 @@ st.write(f'*Disclaimer: The products listed here are based on recommendations fr
 
 st.divider()
 
+# Read in the database and drop the TikTok video link column
 df = pd.read_csv('data.csv')
 df = df.drop('TikTok Reference Video', axis=1)
 
-st.dataframe(df, height=600, width=2000)
+# Locate the number of rows to calculate the height of the dataframe needed
+n_rows = df.shape[0]
+df_height = int(35.2 * (n_rows + 1))
+
+# Display the dataframe
+st.dataframe(df, height=df_height, width=2000)
